@@ -1,0 +1,13 @@
+# files
+.DS_Store
+Thumbs.db
+*.sql
+*.htaccess
+.idea/
+*.zip
+*.txt
+*.sh
+*.sh
+/vendor
+/phpunit.xml
+/composer.lock
