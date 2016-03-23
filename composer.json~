@@ -3,7 +3,6 @@
     "description": "Parser csv files (database) from backup for uCoz sites.",
     "keywords": ["ucoz", "php", "parser"],
     "license": "MIT",
-	"minimum-stability": "dev",
     "authors": [
         {
             "name": "Alexander Morgunov",
