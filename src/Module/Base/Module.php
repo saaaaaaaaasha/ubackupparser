@@ -3,6 +3,13 @@ namespace ubackupparser\Module\Base;
 
 use ubackupparser\App;
 
+/**
+ * Abstract class for all modules
+ *
+ *
+ * Class Module
+ * @package ubackupparser\Module\Base
+ */
 abstract class Module implements IModule {
     //use ModuleFields;
 
@@ -21,7 +28,6 @@ abstract class Module implements IModule {
      */
     protected static $basePath;
 
-    protected $data;
 
     public function __construct($basePath) {
 
@@ -50,8 +56,6 @@ abstract class Module implements IModule {
     public function get() {
         $path = $this->getFilePath();
         $map = $this->getFieldsMap();
-
-        $data = array();
 
         if (!is_file($path)) {
             throw new \DomainException("Can not open file $path");

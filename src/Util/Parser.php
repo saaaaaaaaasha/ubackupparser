@@ -1,16 +1,30 @@
 <?php
 namespace ubackupparser\Util;
 
-//use ubackupparser\Util\Logger;
 use ubackupparser\Module\Module;
 use ubackupparser\App;
 
+/**
+ * Class Parser
+ * @package ubackupparser\Util
+ */
 class Parser {
 
+    /**
+     * @var array options (modules, dump path and mode)
+     */
 	protected $options = array();
+
+    /**
+     * @var last results
+     */
 	protected $data;
 
-	public function __construct($c) {
+    /**
+     * Check dump path and modules
+     * @param $options
+     */
+	public function __construct(array $c) {
 
 		if (!($c['dump'] && is_dir($c['dump']))) {
 			throw new \InvalidArgumentException("The `".$c['dump']."` doesn't exist or isn't readable");
@@ -23,6 +37,10 @@ class Parser {
 		$this->options = $c;
 	}
 
+    /**
+     * Function convert dump for listened modules
+     * @return $this
+     */
 	public function run() {
 
 		$result = array();
@@ -49,6 +67,10 @@ class Parser {
 		return $this;
 	}
 
+    /**
+     * Funtion return last result (converting dump)
+     * @return last
+     */
 	public function get() {
 		return $this->data;
 	}

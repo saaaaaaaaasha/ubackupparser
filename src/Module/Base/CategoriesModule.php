@@ -1,17 +1,17 @@
 <?php
-namespace ubackupparser\Module;
+namespace ubackupparser\Module\Base;
 
-use ubackupparser\Module\Base\Module;
-use ubackupparser\Module\Base\CategoriesModule;
+/**
+ * Trait CategoriesModule for categories type modules
+ * @package ubackupparser\Module\Base
+ */
+trait CategoriesModule {
 
-class PhotoCategories extends Module {
-    use CategoriesModule;
     /**
-     * @var string
+     * Method return fields for all categories type modules
+     * @return array
      */
-    protected static $file = 'ph_ph.txt';
-
-    /*public function getFieldsMap() {
+    public function getFieldsMap() {
         return [
             0 => self::$map['ID'],
             1 => self::$map['PARENT_CAT_ID'],
@@ -21,5 +21,5 @@ class PhotoCategories extends Module {
             // 9 probably access rules
             10 => self::$map['URL_ALIAS'],
         ];
-    }*/
+    }
 }

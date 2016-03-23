@@ -2,7 +2,8 @@
 namespace ubackupparser\Module\Base;
 
 /**
- * Interface for modules
+ * Interface IModule
+ * @package ubackupparser\Module\Base
  */
 interface IModule {
 

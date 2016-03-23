@@ -1,37 +1,32 @@
 <?php
 require "vendor/autoload.php";
 
-$config = require "src/config.php";
-$map    = require "src/map.php";
+//not necessary
+$modules = [
+    "PhotoCategories"
+];
 
 try {
-	$app = \ubackupparser\App::getInstance()->init($config, $map);
+    // get App instance
+    $app = \ubackupparser\App::getInstance()->init( $modules );
 
-	$parser = $app->getParser();
-	$parser->run();
+    // get parser and run convert listed modules
+    $parser = $app->getParser();
+    $parser = $parser->run();
 
-	//print_r($parser->get()['Comments'][1000]);
-	print_r($parser->get());
-} 
-catch(\Exception $e) {
-	\ubackupparser\Util\Logger::run($e->getMessage());
+    // get results array
+    print_r( $parser->get() );
+}
+catch( \Exception $e ) {
+    \ubackupparser\Util\Logger::run( $e->getMessage() );
 }
 
-
-
+// or short version (modules load from config file)
 
 /*
-$parser = new \ubackupparser\Parser($config);
-$parser->run();
-
-print_r($parser->get());
-
-<?php
-require "vendor/autoload.php";
-$config = require "src/config.php";
-
-$parser = new \ubackupparser\Parser($config);
-$parser->run();
-
-print_r ($parser->get());
+    print json_encode(\ubackupparser\App::getInstance()
+        ->init()
+        ->getParser()
+        ->run()
+        ->get());
 */

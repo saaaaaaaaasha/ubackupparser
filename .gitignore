@@ -13,4 +13,4 @@ Thumbs.db
 /composer.lock
 /logs
 /index.php
-/*.~
+*~

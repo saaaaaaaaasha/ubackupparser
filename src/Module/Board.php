@@ -6,10 +6,14 @@ use ubackupparser\Module\Base\Module;
 class Board extends Module {
 
     /**
-     * @var string
+     * @var string file with dump
      */
     protected static $file = 'board.txt';
 
+    /**
+     * Function return fields map index => key
+     * @return array
+     */
     public function getFieldsMap() {
         return [
             0 => self::$map['ID'],
