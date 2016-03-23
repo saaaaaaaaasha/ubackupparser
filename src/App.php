@@ -42,4 +42,8 @@ class App {
 	public function getDumpPath() {
 		return $this->config['dump'];
 	}
+
+	public function getSoftMode() {
+		return $this->config['soft'];
+	}
 }

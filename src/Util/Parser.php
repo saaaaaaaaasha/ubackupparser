@@ -17,7 +17,7 @@ class Parser {
 		}
 
 		if (!($c['modules'] && is_array($c['modules']))) {
-			throw new \InvalidArgumentException();
+			throw new \InvalidArgumentException("Not included modules");
 		}
 
 		$this->options = $c;
@@ -33,7 +33,10 @@ class Parser {
 			$className = 'ubackupparser\\Module\\' . ucfirst($modulekey);
 
 	        if (!class_exists($className)) {
-	            throw new \InvalidArgumentException("Module `$modulekey` does not supported");
+	        	if ($this->options['soft'])
+	        		continue;
+
+        		throw new \InvalidArgumentException("Module `$modulekey` does not supported");
 	        }
 
 	        $module = new $className($this->options['dump']);

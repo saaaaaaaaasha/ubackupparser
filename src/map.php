@@ -1,5 +1,5 @@
 <?php
-return array(
+return [
         'ID' => 'id', // int
         /**
          * 1 -> blog
@@ -104,6 +104,14 @@ return array(
 
         'IS_SECTION' => 'isSection', // bool
 
+
+        'IS_GROUP' => 'isGroup',
+        'POSITION' => 'position',        
+        'NUM_DATA' => 'numData', //??   
+        'WHO_CAN_READ' => 'whoCanRead',
+        'WHO_CAN_LOAD' => 'whoCanLoad',
+        'WHO_CAN_ADD' => 'whoCanAdd',      
+
         /**
          * 1 -> Пользователи
          * 2 -> Проверенные
@@ -170,4 +178,4 @@ return array(
         'ANSWER14_COUNT' => 'answer14Count',
         'ANSWER15_COUNT' => 'answer15Count',
         'TOTAL_ANSWERS' => 'totalAnswers',
-    );
+    ];

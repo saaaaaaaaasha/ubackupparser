@@ -3,11 +3,16 @@ namespace ubackupparser\Convert;
 
 use ubackupparser\Convert\Base\Convert;
 
-class DateTransform extends Convert {
+class Date extends Convert {
 
 	public function getAllowFields() {
 		return [
 			self::$map['DATE_CREATE'],
+			self::$map['DATE_UPDATE'],
+			self::$map['DATE_VISIT'],	
+			//self::$map['DATE_POLL_START'],	
+			//self::$map['DATE_POLL_END'],	
+								
 		];
 	}
 

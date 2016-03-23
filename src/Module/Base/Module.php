@@ -86,7 +86,9 @@ abstract class Module implements IModule {
 
         // invoke converters
         $converters = [
-            new \ubackupparser\Convert\DateTransform,
+            new \ubackupparser\Convert\Date,
+            new \ubackupparser\Convert\Cut,
+            new \ubackupparser\Convert\Attachments,
         ];
         foreach ($newRow as $field => $value) {
             foreach ($converters as $converter) {
@@ -107,6 +109,8 @@ abstract class Module implements IModule {
         //$basePath = //App::getInstance()->getMap();
         $path = self::$basePath . '/_s1/' . $this->getFileName();
 
+        //var_dump($path);
+
         if (!is_file($path)) {
             throw new \DomainException('Dump file does not exist');
         }
@@ -114,17 +118,27 @@ abstract class Module implements IModule {
         return realpath($path);
     }
 
-    /*public function getUploadsPath() {
-        if (!defined('static::$uploadFile')) {
+    public function getUploadsPath() {
+        if (!defined('static::$upload')) {
             return null;
         }
 
-        $path = static::$basePath . '/' . static::$uploadFile;
+        $path = static::$basePath . '/' . static::$upload;
 
         if (!is_dir($path)) {
             throw new \DomainException('Uploads directory does not exist');
         }
 
         return realpath($path);
-    }*/
+    }
+
+    protected function getCatFileName()
+    {
+        return false;
+    }
+
+    protected function getCatKeys()
+    {
+        return false;
+    }
 }
