@@ -11,3 +11,6 @@ Thumbs.db
 /vendor
 /phpunit.xml
 /composer.lock
+/logs
+/index.php
+/*.~
