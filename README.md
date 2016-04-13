@@ -59,4 +59,3 @@ $ php index.php
 ```
 
 You can change some options (like path to dump folder, path to log file etc) in config file - **/ubackupparser/src/config.php**
-
