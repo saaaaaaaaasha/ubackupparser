@@ -1,6 +1,6 @@
 <?php
 return [
-        'ID' => 'id', // int
+        'ID' => 'id', // <int>
         /**
          * 1 -> blog
          * 2 -> news
@@ -14,7 +14,7 @@ return [
          * 10 -> Видео
          * 11 -> Видео-Каналы
          */
-        'MODULE_ID' => 'moduleId', // int
+        'MODULE_ID' => 'moduleId', // <int>
         'CAT_ID' => 'catId', // int
         'PARENT_CAT_ID' => 'parentCatId', // int
         'PENDING' => 'status',
@@ -103,23 +103,22 @@ return [
         'THEME_NAME' => 'themeName',
 
         'IS_SECTION' => 'isSection', // bool
-
-
         'IS_GROUP' => 'isGroup',
-        'POSITION' => 'position',        
-        'NUM_DATA' => 'numData', //??   
-        'WHO_CAN_READ' => 'whoCanRead',
-        'WHO_CAN_LOAD' => 'whoCanLoad',
-        'WHO_CAN_ADD' => 'whoCanAdd',      
+
+        'POSITION' => 'position', //<int>  позиция в списке связных элементов (например позиция категории)
+        'NUM_DATA' => 'numData', //<int> количество материалов в категории
+        'WHO_CAN_READ' => 'whoCanRead', //<string> группы, которые могут читать материал
+        'WHO_CAN_LOAD' => 'whoCanLoad', //<string> группы, которые могут скачивать ?? материал
+        'WHO_CAN_ADD' => 'whoCanAdd', //<string> группы, которые могут добавлять материал
 
         /**
-         * 1 -> Пользователи
-         * 2 -> Проверенные
-         * 3 -> Глобальный модератор
-         * 4 -> Администраторы
-         * 5 -> Модераторы
-         * 251 -> Друзья
-         * 255 -> Заблокированные
+         * 1   - Пользователи
+         * 2   - Проверенные
+         * 3   - Глобальный модератор
+         * 4   - Администраторы
+         * 5   - Модераторы
+         * 251 - Друзья
+         * 255 - Заблокированные
          */
         'GROUP_ID' => 'groupId',
         'DATE_VISIT' => 'dateVisit',

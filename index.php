@@ -3,7 +3,8 @@ require "vendor/autoload.php";
 
 //not necessary
 $modules = [
-    "PhotoCategories"
+    //"PhotoCategories"
+    "Load"
 ];
 
 try {

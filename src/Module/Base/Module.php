@@ -93,6 +93,7 @@ abstract class Module implements IModule {
             new \ubackupparser\Convert\Date,
             new \ubackupparser\Convert\Cut,
             new \ubackupparser\Convert\Attachments,
+            new \ubackupparser\Convert\AccessRules,
         ];
         foreach ($newRow as $field => $value) {
             foreach ($converters as $converter) {
@@ -103,6 +104,11 @@ abstract class Module implements IModule {
         }
 
         return $newRow;
+    }
+
+    public function getName() {
+        $path = explode('\\', __CLASS__);
+        return array_pop($path);
     }
 
     public function getFilePath() {
